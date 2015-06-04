@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="MemcachedWebDemo:war exploded">
+    <output-path>$PROJECT_DIR$/target/MemcachedWebDemo</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="MemcachedWebDemo" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="E:\workspace_idea\MemcachedWebDemo\target/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="MemcachedWebDemo/web/Web" />
+    </root>
+  </artifact>
+</component>
