@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * 功能：
+ * 功能：用户名过滤器
  *
  * Created by ZhouJW on 2015/6/3 16:28.
  */
@@ -18,19 +18,24 @@ public class UserFilter implements Filter{
             HttpServletRequest httpReq = (HttpServletRequest) request;
             HttpServletResponse httpResponse = (HttpServletResponse) response;
             String path = httpReq.getRequestURI();
-            System.out.println(path);
-            //验证码图片和js放行
-            if(path.endsWith("/login.jsp")||path.endsWith("/register.jsp")){
+
+            HttpSession session = httpReq.getSession();
+            //获取用户登录session
+            String userName= (String) session.getAttribute("userName");
+            System.out.println("path="+path+",userName=" + userName);
+
+            if(path.endsWith("/login.jsp")){
+                if (userName != null) {
+                    httpResponse.sendRedirect("success.jsp");
+                    return;
+                }
+
                 chain.doFilter(request, response);
                 return;
             }
 
-            HttpSession session = httpReq.getSession();
-            //获取用户登录session
-            String loginUser= (String) session.getAttribute("userName");
-            System.out.println("============filter======" + loginUser);
-            //验证session和单点登录的用户ID
-            if (loginUser == null) {
+            //验证session用户ID
+            if (userName == null) {
                 httpResponse.sendRedirect("login.jsp");
                 return;
             }

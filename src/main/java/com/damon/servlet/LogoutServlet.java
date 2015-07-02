@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 /**
- * 功能：
+ * 功能：退出servlet
  *
  * Created by ZhouJW on 2015/6/3 16:59.
  */

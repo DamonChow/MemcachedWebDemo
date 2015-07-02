@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 功能：
+ * 功能：登陆servlet
  *
  * Created by ZhouJW on 2015/6/3 16:04.
  */

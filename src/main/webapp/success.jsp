@@ -9,15 +9,13 @@
     <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
     <meta http-equiv="description" content="This is my page">
 </head>
-<%
-    String userName = (String) request.getSession().getAttribute("userName");
-%>
 <body>
 <form method="post" action="logout">
     <table width="500" height="200" align="center" border="1">
         <tr>
             <td align="center">
-                当前登录用户：<%=userName %><br/>
+                tomcat---------------8080<br/>
+                当前登录用户：<%=session.getAttribute("userName") %><br/>
                 sessionId：<%=session.getId()%><br/>
                 ip：<%=request.getRemoteAddr()%><br/>
                 prot：<%=request.getServerPort()%><br/>
